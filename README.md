@@ -9,7 +9,7 @@ The project is set up with a multistage Dockerfile. To compile, use or develop, 
 To build the application, in the project root run:
 ```docker image build -t runway-reciprocal .```
 Then run the app with
-```docker container run --rm runway-reciprocal```
+```docker container run --rm runway-reciprocal <runway-id>```
 
 ### Develop
 The recommended way to develop is to build the "builder" stage as an image:
