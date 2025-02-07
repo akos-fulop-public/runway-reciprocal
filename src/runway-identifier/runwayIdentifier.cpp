@@ -1,6 +1,6 @@
 #include "runwayIdentifier.h"
 
-bool RunwayIdentifier::isValid(std::string id) {
+bool isValidRunwayId(std::string id) {
 	if (id.empty()) {
 		return false;
 	}
