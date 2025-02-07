@@ -4,7 +4,7 @@
 
 class RunwayIdentifier {
 public:
-	static bool isValid(const std::string &id);
+	static bool isValid(std::string id);
 
 private:
 	std::string id;
