@@ -29,3 +29,34 @@ bool isValidRunwayId(std::string id) {
 	}
 	return true;
 }
+
+std::string getReciprocalRunwayId(std::string id) {
+	if (!isValidRunwayId(id)) {
+		return std::string();
+	}
+	std::string letter_component;
+	if (std::isalpha(id.back())) {
+		letter_component = id.back();
+		id.pop_back();
+	}
+
+	int number_component = std::stoi(id);
+	int reciprocal_number_component = number_component + 18;
+	if (reciprocal_number_component > MAX_NUMBER_COMPONENT) {
+		reciprocal_number_component -= 36;
+	}
+	std::string reciprocal = std::to_string(reciprocal_number_component);
+	if (reciprocal.length() == 1) {
+		reciprocal = "0" + reciprocal;
+	}
+	if (!letter_component.empty()) {
+		if (letter_component == "R") {
+			reciprocal += "L";
+		} else if (letter_component == "L") {
+			reciprocal += "R";
+		} else {
+			reciprocal += "C";
+		}
+	}
+	return reciprocal;
+}

@@ -49,3 +49,31 @@ TEST(Validate, PaddedSingleDigitInvalidLetter) {
 TEST(Validate, WhitespaceSingleDigit) {
 	EXPECT_FALSE(isValidRunwayId(std::string(" 7")));
 }
+
+TEST(Validate, TwoDigitsLowerCaseLetter) {
+	EXPECT_FALSE(isValidRunwayId(std::string("18r")));
+}
+
+TEST(Reciprocal, LowNumber) {
+	EXPECT_EQ(getReciprocalRunwayId("08"), "26");
+}
+
+TEST(Reciprocal, Overflow) {
+	EXPECT_EQ(getReciprocalRunwayId("32"), "14");
+}
+
+TEST(Reciprocal, Padding) {
+	EXPECT_EQ(getReciprocalRunwayId("20"), "02");
+}
+
+TEST(Reciprocal, Center) {
+	EXPECT_EQ(getReciprocalRunwayId("13C"), "31C");
+}
+
+TEST(Reciprocal, Right) {
+	EXPECT_EQ(getReciprocalRunwayId("28R"), "10L");
+}
+
+TEST(Reciprocal, Left) {
+	EXPECT_EQ(getReciprocalRunwayId("3L"), "21R");
+}
