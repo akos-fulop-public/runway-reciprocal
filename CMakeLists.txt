@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.0.0)
 
-project(jumpstart
+project(runway-reciprocal
 	VERSION 0.1.0
-	HOMEPAGE_URL https://github.com/akos-fulop-public/jumpstart
+	HOMEPAGE_URL https://github.com/akos-fulop-public/runway-reciprocal
 	LANGUAGES CXX
 )
 
